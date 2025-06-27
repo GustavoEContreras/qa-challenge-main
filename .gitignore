@@ -36,3 +36,44 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Playwright outputs
+test-results/
+playwright-report/
+*.zip
+
+# VSCode settings (opcional)
+.vscode/
+
+# Environment files
+.env
+.env.local
+
+# MacOS
+.DS_Store
+
+# Linux
+*.swp
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+
+# Coverage (si en algún momento agregás cobertura de código)
+coverage/
+
+# IDEs
+.idea/
+*.iml
+*.sublime-workspace
+*.sublime-project
