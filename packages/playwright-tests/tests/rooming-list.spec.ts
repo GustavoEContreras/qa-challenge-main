@@ -3,6 +3,8 @@ import * as RoomingListSelectors from './rooming-list.selectors';
 import * as RoomingListHelpers from './rooming-list.helpers';
 import * as RoomingListAssertions from './rooming-list.assertions';
 
+test.describe.configure({ mode: 'parallel' });
+
 test.describe('Rooming List Management', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/rooming-list-management');
@@ -73,11 +75,13 @@ test('TC10 - Verify that after applying a filter, the selected filter persists i
   await filterButton.click();
 
   const options = ['Active', 'Closed', 'Cancelled'];
+  
   for (const label of options) {
     const optionText = page.locator('div.sc-ejXKMB', { hasText: label });
     const optionContainer = optionText.locator('..');
     const svg = optionContainer.locator('svg');
     const isSelected = (await svg.count()) > 0;
+
 
     if (label === 'Active') {
       expect(isSelected).toBe(true);

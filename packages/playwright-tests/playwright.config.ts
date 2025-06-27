@@ -14,7 +14,11 @@ export default defineConfig({
     baseURL: 'http://localhost:3000',
 
     // Collect trace when retrying the failed test.
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
+
+    screenshot: 'only-on-failure',
+  
+    video: 'retain-on-failure',
   },
   // Configure projects for major browsers.
   projects: [
@@ -23,6 +27,8 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
+
+  workers: 2
   /*
   // Run your local dev server before starting the tests.
   webServer: {
